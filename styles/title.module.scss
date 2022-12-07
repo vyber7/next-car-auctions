@@ -1,0 +1,9 @@
+#page_title {
+  text-align: left;
+  /*background: #cccc26;*/
+  width: 100%;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}

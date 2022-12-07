@@ -1,10 +1,11 @@
 import { useRouter } from "next/router";
+import styles from "/styles/title.module.scss";
 
 function Title() {
   const router = useRouter();
-  let path = router.pathname.match(/[a-z\-]+/g)?.toString();
+  let path = router.pathname.match(/[a-z\-]+$/g)?.toString();
 
-  path = path == null ? "home" : path[0];
+  path = path == null ? "home" : path;
 
   let title =
     path == "home"
@@ -13,7 +14,7 @@ function Title() {
       ? "About Us"
       : path == "contact"
       ? "Get in Touch"
-      : path == "auth"
+      : path == "signin"
       ? "Car Auctions"
       : path == "register"
       ? "Car Auctions"
@@ -30,7 +31,7 @@ function Title() {
       ? "A few words about who we are."
       : path == "contact"
       ? "Feel free to drop us a line whenever you have any questions or concerns."
-      : path == "auth"
+      : path == "signin"
       ? "Please sign in to your account."
       : path == "register"
       ? "Please register your account with us."
@@ -41,23 +42,10 @@ function Title() {
       : "";
 
   return (
-    <>
-      <div id='page-title'>
-        <h1>{title}</h1>
-        <div>{subtitle}</div>
-      </div>
-      <style jsx>{`
-        #page-title {
-          text-align: left;
-          /*background: #cccc26;*/
-          width: 100%;
-
-          @media (max-width: 500px) {
-            width: 100%;
-          }
-        }
-      `}</style>
-    </>
+    <div id={styles.page_title}>
+      <h1>{title}</h1>
+      <div>{subtitle}</div>
+    </div>
   );
 }
 
