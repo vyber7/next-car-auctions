@@ -1,0 +1,23 @@
+{
+  "prettier.bracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "editor.linkedEditing": true,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "askForPassword": true,
+      "driver": "MySQL",
+      "username": "root",
+      "database": "nextjs_prisma",
+      "name": "Local"
+    }
+  ]
+}

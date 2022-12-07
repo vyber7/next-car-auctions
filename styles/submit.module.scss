@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  text-align: left;
+  padding: 37px 0 40px;
+  max-width: 1000px;
+  margin: auto;
+
+  main {
+    background: yellow;
+    width: 750px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    h2 {
+      padding: 40px 0 20px 0;
+    }
+
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+
+      label {
+        //background: green;
+        padding: 0 0 10px 0;
+        width: 200px;
+      }
+
+      input {
+        margin: 0 0 20px 0;
+        height: 33px;
+        width: 200px;
+        border: 1px solid #000;
+        border-radius: 5px;
+      }
+
+      textarea {
+        margin: 0 0 20px 0;
+        width: 400px;
+        height: 120px;
+        resize: none;
+        border: 1px solid #000;
+        border-radius: 5px;
+      }
+
+      #images {
+        border: 1px dashed #000;
+      }
+
+      textarea + label {
+        width: 400px;
+        padding: 0 0 5px 0;
+      }
+
+      button {
+        height: 25px;
+        width: 100px;
+        border: none;
+        margin: 0 0 20px 0;
+        background: #22a34e;
+        color: #fff;
+      }
+
+      #btn_browse {
+        margin: 0 0 0 5px;
+        padding: 0;
+      }
+    }
+  }
+
+  aside {
+    width: 250px;
+
+    h2 {
+      padding: 40px 0 20px 0;
+    }
+  }
+}

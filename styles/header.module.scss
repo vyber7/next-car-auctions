@@ -1,0 +1,141 @@
+.header {
+  background: #22a34e;
+  width: 100vw;
+  height: 37px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  .wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    margin: auto;
+
+    #hamburger_nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+
+      label {
+        display: none;
+
+        @media screen and (max-width: 645px) {
+          display: block;
+          color: #fff;
+          padding: 3px 20px 3px;
+          text-align: right;
+          font-size: 1.5em;
+          background: rgb(49, 110, 223);
+        }
+      }
+
+      input#hamburger {
+        display: none;
+
+        &:checked ~ .nav_items {
+          @media screen and (max-width: 645px) {
+            display: block;
+            width: 100%;
+            position: absolute;
+            right: 0;
+            top: 37px;
+          }
+        }
+      }
+
+      .nav_items {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+
+        @media screen and (max-width: 645px) {
+          display: none;
+          margin: 0;
+        }
+
+        a {
+          display: inline-block;
+          width: 124px;
+          font-weight: bold;
+          font-size: 12px;
+          color: #22a34e;
+          border-radius: 5px;
+          margin: 0 2px;
+          padding: 5px;
+          background: #c3f4c8;
+          transition: background-color 0.2s, color 0.5s;
+
+          @media screen and (max-width: 645px) {
+            width: 100%;
+            display: block;
+            margin: 0;
+            border-radius: 0;
+          }
+
+          &:hover {
+            background: #19d258;
+            color: #c3f4c8;
+          }
+        }
+      }
+
+      a.popup {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px 0 5px;
+
+        &:hover {
+          .popup_content {
+            display: block;
+          }
+        }
+
+        @media screen and (max-width: 645px) {
+          display: none;
+        }
+
+        .popup_content {
+          border-top: 1px solid #000;
+          background: #b3cccc;
+          position: absolute;
+          display: none;
+          right: 0;
+          top: 37px;
+
+          a {
+            color: rgb(28, 104, 72);
+            display: block;
+            padding: 10px 10px;
+
+            &:hover {
+              background: #e0ebeb;
+            }
+          }
+
+          button {
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+            background: #b3cccc;
+            border: none;
+            border-top: 1px solid rgb(28, 104, 72);
+            text-transform: capitalize;
+
+            &:hover {
+              background: #e0ebeb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
