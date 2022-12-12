@@ -17,9 +17,12 @@ function SubmitVehicle() {
           <label htmlFor='decription'>Description</label>
           <textarea id='description' name='description' />
           <label htmlFor={styles.images}>
-            Drag images below or <button id={styles.btn_browse}>BROWSE</button>
+            Drag images below or{" "}
+            <button id={styles.btn_browse} disabled>
+              BROWSE
+            </button>
           </label>
-          <textarea id={styles.images} name='images' />
+          <textarea id={styles.images} name='images' disabled />
           <button type='submit'>SUBMIT</button>
         </form>
       </main>
