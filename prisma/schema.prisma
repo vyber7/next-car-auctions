@@ -56,9 +56,11 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Post {
-  id    String @id @default(cuid())
-  title String
-  slug  String
-  body  String
+model Vehicle {
+  id          String @id @default(cuid())
+  year        String
+  make        String
+  model       String
+  miles       String
+  description String @db.Text
 }

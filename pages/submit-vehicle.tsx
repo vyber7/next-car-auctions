@@ -1,11 +1,11 @@
 import styles from "/styles/submit.module.scss";
 
-function validateForm(e) {
-  const make = document.forms[0].make.value;
-  const model = document.forms[0].model.value;
-  const year = document.forms[0].year.value;
-  const miles = document.forms[0].miles.value;
-  const description = document.forms[0].description.value;
+function validateForm(e): void {
+  const make = document.forms["submit"].make.value;
+  const model = document.forms["submit"].model.value;
+  const year = document.forms["submit"].year.value;
+  const miles = document.forms["submit"].miles.value;
+  const description = document.forms["submit"].description.value;
   //const input = document.querySelector("#make");
 
   if (
@@ -18,10 +18,6 @@ function validateForm(e) {
     alert("Enter missing info!");
     e.preventDefault();
   }
-
-  //input.setAttribute("placeholder", "make");
-  //console.log(x);
-  //console.log(input);
 }
 
 function SubmitVehicle() {
@@ -30,6 +26,7 @@ function SubmitVehicle() {
       <main>
         <h2>Enter your vehicle information</h2>
         <form
+          name='submit'
           action='/api/new-listing'
           onSubmit={(e) => validateForm(e)}
           method='POST'>
