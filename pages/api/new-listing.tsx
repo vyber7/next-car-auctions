@@ -16,7 +16,9 @@ async function NewListing(req, res) {
   });
 
   res.send(
-    `Your ${vehicle.year} ${vehicle.make} ${vehicle.model} has been submitted!\n\n${vehicle.description}`
+    //"/confirmation.tsx"
+    `<h1>Your ${vehicle.year} ${vehicle.make} ${vehicle.model} has been    submitted!</h1><p>${vehicle.description}</p>
+  `
   );
 }
 
