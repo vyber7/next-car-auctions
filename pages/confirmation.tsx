@@ -16,10 +16,6 @@ async function Confirmation() {
         <Title />
         <h2>Thank you! Your vehicle has been submitted</h2>
       </main>
-      <aside>
-        <h2>Recently Sold</h2>
-        <div className='recently-sold'></div>
-      </aside>
     </div>
   );
 }

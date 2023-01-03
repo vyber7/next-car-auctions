@@ -1,13 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Title from "../components/title";
+import { PrismaClient } from "@prisma/client";
 
 /**
  * This is a home page.
  * @returns {JSX.Element}: The JSX Code for Home Page.
  */
 
-export default function Home(): JSX.Element {
+export default function Home({ vehicles }): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +18,25 @@ export default function Home(): JSX.Element {
       </Head>
       <main className={styles.main}>
         <Title />
+        <div>
+          {vehicles.map((vehicle, i) => {
+            return (
+              <div key={i}>
+                <h1>
+                  {vehicle.year} {vehicle.make} {vehicle.model}
+                </h1>
+                <p>{vehicle.description}</p>
+              </div>
+            );
+          })}
+        </div>
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
+  const vehicles = await prisma.vehicle.findMany();
+  return { props: { vehicles } };
 }
