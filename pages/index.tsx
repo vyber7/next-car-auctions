@@ -1,7 +1,7 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Title from "../components/title";
+import styles from "../styles/Home.module.scss";
 import { PrismaClient } from "@prisma/client";
+import Image from "next/image";
 
 /**
  * This is a home page.
@@ -17,20 +17,33 @@ export default function Home({ vehicles }): JSX.Element {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
-        <Title />
+        <h2>Featured Auctions</h2>
         <div>
           {vehicles.map((vehicle, i) => {
             return (
-              <div key={i}>
-                <h1>
-                  {vehicle.year} {vehicle.make} {vehicle.model}
-                </h1>
-                <p>{vehicle.description}</p>
+              <div key={i} className={styles.listing}>
+                <Image
+                  style={{ opacity: 0.5 }}
+                  src='/images/background.jpg'
+                  alt='main picture'
+                  width={350}
+                  height={217}></Image>
+                <div className={styles.info}>
+                  <h2>
+                    {vehicle.year} {vehicle.make} {vehicle.model}
+                  </h2>
+                  <p>{vehicle.description}</p>
+                  <button>read more</button>
+                </div>
               </div>
             );
           })}
         </div>
       </main>
+      <aside>
+        <h2>Current Auctions</h2>
+        <div className='current_auctions'></div>
+      </aside>
     </div>
   );
 }

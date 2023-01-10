@@ -1,7 +1,7 @@
 .container {
   display: flex;
   text-align: left;
-  padding: 37px 0 40px;
+  padding: 37px 0 2rem;
   max-width: 1000px;
   margin: auto;
 
@@ -12,7 +12,7 @@
     flex-flow: column nowrap;
 
     h2 {
-      padding: 40px 0 20px 0;
+      padding: 2rem 0 1rem;
     }
 
     form {
@@ -76,7 +76,7 @@
     width: 250px;
 
     h2 {
-      padding: 40px 0 20px 0;
+      padding: 2rem 0 1rem;
     }
   }
 }
